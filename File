@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fptr;
+    char data[100];
+
+    // Open file in write mode
+    fptr = fopen("output.txt", "w");
+
+    if (fptr == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+
+    // Get data from user
+    printf("Enter data to write into file: ");
+    fgets(data, sizeof(data), stdin);
+
+    // Write to file
+    fputs(data, fptr);
+
+    // Close file
+    fclose(fptr);
+
+    printf("Data written to file successfully.\n");
+    return 0;
+}
