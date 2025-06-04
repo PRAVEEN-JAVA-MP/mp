@@ -1,1 +1,23 @@
+#include <stdio.h>
+int main() {
+    int marks[5], i, total = 0, avg;
+    
+    for(i = 0; i < 5; i++) {
+        printf("Enter marks of subject %d: ", i+1);
+        scanf("%d", &marks[i]);
+        total += marks[i];
+    }
+    
+    avg = total / 5;
 
+    switch(avg / 10) {
+        case 10:
+        case 9: printf("Grade: A\n"); break;
+        case 8: printf("Grade: B\n"); break;
+        case 7: printf("Grade: C\n"); break;
+        case 6: printf("Grade: D\n"); break;
+        default: printf("Grade: F\n");
+    }
+
+    return 0;
+}
