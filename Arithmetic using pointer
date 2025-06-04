@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int *p, *q;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+
+    p = &a;
+    q = &b;
+
+    printf("\nUsing Pointers:\n");
+    printf("Addition: %d\n", *p + *q);
+    printf("Subtraction: %d\n", *p - *q);
+    printf("Multiplication: %d\n", (*p) * (*q));
+    if (*q != 0)
+        printf("Division: %.2f\n", (float)(*p) / (*q));
+    else
+        printf("Division: Not possible (division by zero)\n");
+
+    return 0;
+}
